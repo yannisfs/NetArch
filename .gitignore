@@ -1,2 +1,34 @@
-/env
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Secret environment settings
 .env
+
+# Django stuff
+db.sqlite3
+media/
+staticfiles/
+
+# Local settings
+local_settings.py
+
+# Logs
+*.log
+
+# Virtual environment
+venv/
+env/
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# MacOS files
+.DS_Store
+
+htmlcov/
+.coverage
