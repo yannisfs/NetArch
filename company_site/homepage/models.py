@@ -6,4 +6,4 @@ class Update(models.Model):
     title = models.CharField(max_length=128)
     text = models.CharField(max_length=2048)
     author = models.CharField(max_length=64)
-    date = models.DateField(auto_now_add=True)
+    date = models.DateField(auto_now_add=True, editable=True)
