@@ -6,4 +6,4 @@ class Project(models.Model):
     title = models.CharField(max_length=1024)
     description = models.CharField(max_length=4096)
     client = models.CharField(max_length=128, default='')
-    timeframe = models.Charfield(max_length=128, default='')
+    timeframe = models.CharField(max_length=128, default='')
