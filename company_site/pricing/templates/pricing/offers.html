@@ -1,31 +1,33 @@
-<!-- templates/previous_projects/examples.html -->
+<!-- templates/pricing/offers.html -->
 
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Projects - NetArch{% endblock %}
+{% block title %}Offers - NetArch{% endblock %}
 
 {% block content %}
 <div class="container mt-4">
-    <h1 class="mb-4">Previous Projects</h1>
+    <h1 class="mb-4">Offers & Pricing</h1>
 
     <!-- Products Grid -->
     <div class="row">
-        {% for project in projects %}
+        {% for offer in offers %}
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    {% if project.image %}
-                        <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                    {% if offer.image %}
+                        <img src="{{ offer.image.url }}" class="card-img-top" alt="{{ offer.title }}">
                     {% else %}
                         <img src="{% static 'images/no_image_available.png' %}" class="card-img-top" alt="No Image Available">
                     {% endif %}
+                    <div class="card-header">
+                        {{ offer.price_range }}€
+                    </div>
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">{{ project.title }}</h5>
+                        <h5 class="card-title">{{ offer.title }}</h5>
                         {% if project.client %}
                         <h6 class="card-subtitle mb-2 text-muted">{{ project.client }}</h6>
                         {% endif %}
-                        <p class="card-text">{{ project.description }}</p>
-                        
+                        <p class="card-text">{{ offer.description }}</p>
                     </div>
                 </div>
             </div>
