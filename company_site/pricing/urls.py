@@ -5,4 +5,5 @@ app_name = "pricing"
 
 urlpatterns = [
     path('', views.OfferListView, name="offers_list"),
+    path('<slug:slug>/', views.OfferDetailView, name='offer_detail'),
 ]

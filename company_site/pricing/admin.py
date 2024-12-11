@@ -5,5 +5,6 @@ from .models import Offer
 @admin.register(Offer)
 class OfferAdmin(admin.ModelAdmin):
     list_display = ('title','image', 'description', 'price_range', 'available')
+    prepopulated_fields = {'slug': ('title',)}
     search_fields = ('title', 'available')
     

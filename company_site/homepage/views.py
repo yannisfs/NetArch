@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from .models import Update
 
 # Create your views here.
-def homepageview(request):
-    return request
+def HomepageView(request):
+    updates = Update.objects.all()
+
+    return render(request, 'homepage/homepage.html', {'updates': updates})

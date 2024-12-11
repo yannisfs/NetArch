@@ -28,6 +28,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">{{ project.client }}</h6>
                         {% endif %}
                         <p class="card-text">{{ offer.description }}</p>
+                        <a href="{% url 'pricing:offer_detail' offer.slug %}" class="btn btn-primary mt-auto">Details</a>
                     </div>
                 </div>
             </div>
