@@ -1,0 +1,62 @@
+<!-- templates/previous_projects/examples.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Projects - NetArch{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h3 class="mb-4">Start - Netarch</h3>
+
+    <!-- Products Grid -->
+    <div class="row">
+        <div id="updateCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for update in updates %}
+                    {% if forloop.first %}
+                        <div class="carousel-item active">
+                            {% if update.image %}
+                                <img class="d-block w-100" src="{{ update.image.url }}" alt="{{ update.title }}">
+                            {% else %}
+                                <img class="d-block w-100" src="{% static 'images/no_image_available.png' %}" alt="{{ update.title }}">
+                            {% endif %}
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>{{ update.title }}</h5>
+                                <p>{{ update.text }}</p>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="carousel-item">
+                            {% if update.image %}
+                            <img class="d-block w-100" src="{{ update.image.url }}" alt="{{ update.title }}">
+                            {% else %}
+                            <img class="d-block w-100" src="{% static 'images/no_image_available.png' %}" alt="{{ update.title }}">
+                            {% endif %}
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>{{ update.title }}</h5>
+                                <p>{{ update.text }}</p>
+                                </div>
+                        </div>
+                    {% endif %}
+
+                {% empty %}
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{% static 'images/no_image_available.png' %}" alt="No Slides">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>No Slides</h5>
+                            <p>there's no content to show</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>       
+            <a class="carousel-control-prev" href="#updateCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#updateCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
