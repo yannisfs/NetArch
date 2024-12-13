@@ -1,0 +1,44 @@
+<!-- templates/previous_projects/examples.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact - Netarch{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h3 class="mb-4">Contact & Quotes</h3>
+
+    
+    <div class="row">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              
+              <h5>{{ form.name.label_tag }}</h5>
+              {{ form.name }}
+            </div>
+            <div class="form-group">
+                {{ form.surname.label_tag }}
+                {{ form.surname }}
+            </div>
+            <div class="form-group">
+                {{ form.company.label_tag }}
+                {{ form.company }}
+            </div>
+            <div class="form-group">
+              {{ form.email.label_tag }}
+              {{ form.email }}
+            </div>
+            <div class="form-group">
+              {{ form.content.label_tag }}
+              {{ form.content }}
+            </div>
+            <div id="optionalInfo" class="form-text">
+                all fields marked with * must be filled out
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+</div>
+{% endblock %}
