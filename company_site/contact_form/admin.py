@@ -4,5 +4,6 @@ from .models import *
 # Register your models here.
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ('sent', 'company', 'name', 'surname', 'email', 'content')
-    list_filter = ('sent', 'company')
+    list_display = ('company', 'name', 'surname', 'email', 'content', 'sent')
+    readonly_fields = ('sent',)
+    list_filter = ('sent', 'company', 'surname')
