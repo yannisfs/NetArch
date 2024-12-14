@@ -30,8 +30,11 @@
                         <p class="card-text">{{ offer.description }}</p>
                         <div class="btn-group" role="group">
                             <a href="{% url 'pricing:offer_detail' offer.slug %}" class="btn btn-primary mt-auto">Details</a>
-                            <button type="button" class="btn btn-primary">Get Quote</button>
-                          </div>
+                            <a href="{% url 'contact_form:contact' %}?offer_slug={{ offer.slug }}&requested_quote=1" class="btn btn-primary mt-auto">Get Quote</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center border-top-0">
+                        
                     </div>
                 </div>
             </div>
