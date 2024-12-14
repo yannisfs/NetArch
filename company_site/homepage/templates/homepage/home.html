@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<!-- Wrap the hero image in a container with rounded corners and a background image -->
+<div class="container-fluid" style="max-width:1200px;">
+    <div class="position-relative overflow-hidden" 
+
+         style="
+             border-radius: 50px; 
+             background: url('{% static "images/home_bg.png" %}') no-repeat center center/cover; 
+             min-height: 650px;
+             padding: 50px;
+         ">
+        
+         
+
+        <!-- Text and Button Overlay -->
+        <div class="position-absolute" style="bottom: 40px; left: 40px;">
+            <h1 class="text-white" style="text-shadow:0 0 10px rgba(0,0,0,0.7); font-size:2rem;">
+                Network Architecture is our passion
+            </h1>
+            <a href="{% url 'pricing:offers_list' %}" class="btn btn-light mt-3" style="border-radius: 20px; font-weight:bold;">
+                OFFERS
+            </a>
+            <a href="{% url 'homepage:homepage' %}" class="btn btn-light mt-3" style="border-radius: 20px; font-weight:bold;">
+                Updates
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="scrolling-carousel mt-4">
+    <div class="scroll-carousel-track">
+        {% for update in updates %}
+            <div class="scroll-carousel-item">
+                <img src="{{ update.image.url }}" alt="{{ update.title }}">
+                <p>{{ update.title }}</p>
+            </div>
+        {% endfor %}
+        {% for update in updates %}
+            <div class="scroll-carousel-item">
+                <img src="{{ update.image.url }}" alt="{{ update.title }}">
+                <p>{{ update.title }}</p>
+            </div>
+        {% endfor %}
+        {% for update in updates %}
+            <div class="scroll-carousel-item">
+                <img src="{{ update.image.url }}" alt="{{ update.title }}">
+                <p>{{ update.title }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
