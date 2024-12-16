@@ -7,3 +7,4 @@ class Update(models.Model):
     text = models.CharField(max_length=2048)
     author = models.CharField(max_length=64)
     date = models.DateField(auto_now_add=True, editable=True)
+    show = models.BooleanField(default=True)

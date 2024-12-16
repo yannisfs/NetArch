@@ -3,13 +3,13 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Projects - NetArch{% endblock %}
+{% block title %}Home - Netarch{% endblock %}
 
 {% block content %}
 <div class="container mt-4">
-    <h3 class="mb-4">Start - Netarch</h3>
+    <h3 class="mb-4">Home</h3>
 
-    <!-- Products Grid -->
+    <!-- Update Carousel -->
     <div class="row">
         <div id="updateCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -21,10 +21,6 @@
                             {% else %}
                                 <img class="d-block w-100" src="{% static 'images/no_image_available.png' %}" alt="{{ update.title }}">
                             {% endif %}
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{ update.title }}</h5>
-                                <p>{{ update.text }}</p>
-                            </div>
                         </div>
                     {% else %}
                         <div class="carousel-item">
@@ -33,10 +29,6 @@
                             {% else %}
                             <img class="d-block w-100" src="{% static 'images/no_image_available.png' %}" alt="{{ update.title }}">
                             {% endif %}
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{ update.title }}</h5>
-                                <p>{{ update.text }}</p>
-                                </div>
                         </div>
                     {% endif %}
 
