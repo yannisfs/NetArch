@@ -32,7 +32,7 @@
     </div>
 </div>
 
-<div class="scrolling-carousel mt-4">
+<div class="scrolling-carousel w-100 mt-4">
     <div class="scroll-carousel-track">
         {% for update in updates %}
             <div class="scroll-carousel-item">
@@ -53,6 +53,11 @@
             </div>
         {% endfor %}
     </div>
+</div>
+
+<div class="block">
+    <img src="{% static 'images/home_bg.png' %}" data-speed="-1" class="img-parallax">
+    <h2>Parallax Speed -1</h2>
 </div>
 
 {% endblock %}
