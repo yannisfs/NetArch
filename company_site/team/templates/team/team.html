@@ -1,0 +1,29 @@
+<!-- templates/team/team.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Team - NetArch{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Team</h1>
+
+    <!-- Offer List Display -->
+    <div class="row">
+        {% for entity in entities %}
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card h-100">
+                    <img class="card-img" src="{{ entity.image.url }}">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title mt-40">{{ entity.name }}</h5>
+                        <p class="card-text">{{ entity.position }}</p>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>No Members available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

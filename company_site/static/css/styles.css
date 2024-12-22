@@ -1,3 +1,5 @@
+/* Homepage App Styles Start */
+
 /* Container to Hide Overflow */
 .scrolling-carousel {
     overflow: hidden;
@@ -31,3 +33,24 @@
     font-size: 1rem;
     color: #333;
 }
+
+/* Homepage App Styles End */
+
+/* Pricing App Styles Start*/
+
+.custom-card {
+    border-color: transparent;
+    /* border-radius: 50px; */
+    overflow: hidden;
+}
+
+.custom-card .custom-placeholder{
+    min-height: 200px;
+    min-width: 300px;
+}
+
+.custom-card .card-header{
+    border-color: transparent;
+}
+
+/* Pricing App Styles End */

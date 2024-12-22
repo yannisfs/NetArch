@@ -24,5 +24,7 @@ urlpatterns = [
     path('', include('homepage.urls', 'homepage')),
     path('projects/', include('previous_projects.urls', 'previous_projects')),
     path('pricing/', include('pricing.urls', 'pricing')),
-    path('contact/', include('contact_form.urls', 'contact_form'))
+    path('contact/', include('contact_form.urls', 'contact_form')),
+    path('team/', include('team.urls', 'team')),
+    path('imprint/', include('imprint.urls', 'imprint'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
