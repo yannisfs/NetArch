@@ -1,0 +1,20 @@
+<!-- templates/homepage/home.html -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="hero-container" style="background-image: url('{% static 'images/bg_test_v2.png' %}'); object-fit:fill;">
+    <h1 class="hero-line">
+        Network Architecture is our passion
+    </h1>
+    <h5 class="hero-sub-line">
+        driving modern webdesign forward
+    </h5>
+    <a href="{% url 'previous_projects:example_list' %}" class="btn btn-light mt-3 custom-btn">
+        our work
+    </a>
+</div>
+
+{% endblock %}

@@ -10,25 +10,34 @@
     <h1 class="mb-4">Previous Projects</h1>
 
     <!-- Projects List Display -->
-    <div class="row">
+    <div class="custom-card-wrapper">
         {% for project in projects %}
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card h-100">
+            {% if not forloop.counter|divisibleby:2 %}
+                <div class="custom-card">
                     {% if project.image %}
-                        <img src="{{ project.image.url }}" class="card-img-top rounded" alt="{{ project.title }}">
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}">
                     {% else %}
-                        <img src="{% static 'images/no_image_available.png' %}" class="card-img-top rounded" alt="No Image Available">
+                        <img src="{% static 'images/no_image_available.png' %}" alt="No Image Available">
                     {% endif %}
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">{{ project.title }}</h5>
-                        {% if project.client %}
-                        <h6 class="card-subtitle mb-2 text-muted">{{ project.client }}</h6>
-                        {% endif %}
-                        <p class="card-text">{{ project.description }}</p>
-                        
+                    <div class="custom-card-body">
+                        <h5 class="custom-card-header">{{ project.title }}</h5>
+                        <p class="custom-card-text">{{ project.description }}</p>
                     </div>
                 </div>
-            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:2 %}
+                <div class="custom-card mirrored">
+                    {% if project.image %}
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                    {% else %}
+                        <img src="{% static 'images/no_image_available.png' %}" alt="No Image Available">
+                    {% endif %}
+                    <div class="custom-card-body">
+                        <h5 class="custom-card-header">{{ project.title }}</h5>
+                        <p class="custom-card-text">{{ project.description }}</p>
+                    </div>
+                </div>
+            {% endif %}
         {% empty %}
             <p>No projects available.</p>
         {% endfor %}

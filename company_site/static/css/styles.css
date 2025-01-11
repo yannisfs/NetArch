@@ -1,4 +1,38 @@
+/* color preset */
+:root{
+    --primary: #000000;
+    --secondary: #757575;
+}
+
 /* Homepage App Styles Start */
+
+/* homepage placeholder template styles */
+.hero-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 40rem;
+}
+
+.hero-line{
+    padding-top: auto;
+    padding-bottom: auto;
+    text-align: center;
+    font-weight: lighter;
+    color: var(--primary);
+}
+
+.hero-sub-line{
+    font-weight: lighter;
+    color: var(--secondary);
+}
+
+.custom-btn{
+    font-weight: lighter;
+    border-radius: 20px;
+}
+
 
 /* Container to Hide Overflow */
 .scrolling-carousel {
@@ -38,19 +72,66 @@
 
 /* Pricing App Styles Start*/
 
-.custom-card {
-    border-color: transparent;
-    /* border-radius: 50px; */
-    overflow: hidden;
-}
-
-.custom-card .custom-placeholder{
-    min-height: 200px;
-    min-width: 300px;
-}
-
-.custom-card .card-header{
-    border-color: transparent;
-}
-
 /* Pricing App Styles End */
+
+/* Previous Projects Styles */
+
+.custom-card-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.custom-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly center;
+    align-items: stretch;
+    gap: 20px;
+    width: 66.66%;
+}
+
+.mirrored{
+    flex-direction: row-reverse;
+}
+
+.custom-card img{
+    height:20rem;
+    object-fit: cover;
+}
+
+.custom-card-body{
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 650px) {
+
+    .custom-card-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+
+    .custom-card{
+        flex-direction: column;
+    }
+
+    .custom-card img{
+        height: auto;
+        max-width: 100%;
+    }
+
+    .custom-card-body{
+        max-width: 100%;
+    }
+}
+
+/* Previous Projects Styles End */

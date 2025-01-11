@@ -5,4 +5,4 @@ from .models import Update
 def HomepageView(request):
     updates = Update.objects.all()
 
-    return render(request, 'homepage/home.html', {'updates': updates})
+    return render(request, 'homepage/home_placeholder.html', {'updates': updates})
